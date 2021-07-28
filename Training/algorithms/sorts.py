@@ -6,7 +6,7 @@ Created on Wed Jun 16 11:54:54 2021
 """
 
 
-class Sort_Algorithms(object):
+class SortAlgorithms(object):
     def __init__(self):
         self.sort_array = [5, 3, 1, 4, 2, 6, 8, 9, 7]
         
@@ -18,20 +18,22 @@ class Sort_Algorithms(object):
             )
     
     # BUBBLE SORT -> compare every element of array while the next element     
-    # is larger than current and swipe them   
-    def bubble_sort(self, array):
-        swaped = True
-        while swaped:
-            swaped = False
+    # is larger than current and swipe them
+    @staticmethod
+    def bubble_sort(array):
+        swapped = True
+        while swapped:
+            swapped = False
             for i in range(len(array) - 1):
                 if array[i] > array[i + 1]:
                     array[i], array[i + 1] = array[i + 1], array[i]
-                    swaped = True
+                    swapped = True
         return array
 
-    # SELECTION SORT -> find smalles element in tail of array and swith it with   
+    # SELECTION SORT -> find smallest element in tail of array and switch it with
     # head of array, than proceed to first element of tail
-    def selection_sort(self, array):
+    @staticmethod
+    def selection_sort(array):
         for i in range(len(array)):
             lowest_value_index = i
             for j in range(i + 1, len(array)):
@@ -45,5 +47,6 @@ class Sort_Algorithms(object):
     def insertion_sort(self, array):
         return array
 
+
 if __name__ == "__main__":
-    print(Sort_Algorithms())
+    print(SortAlgorithms())
